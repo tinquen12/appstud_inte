@@ -47,6 +47,12 @@
 	/**
 	 * Toolkit JavaScript
 	 */
+	const openNav = function openNavigation() {
+	  document.querySelector('.nav__burger').classList.toggle('nav__burger--clicked');
+	  document.querySelector('.nav__links').classList.toggle('nav__links--isopened');
+	};
+	
+	document.querySelector('.nav__burger').addEventListener("click", openNav);
 
 /***/ })
 /******/ ]);
