@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title></title>
+
+	<link rel="stylesheet" href="assets/fabricator/styles/f.css">
+
+	<!-- toolkit styles -->
+	<link rel="stylesheet" href="assets/toolkit/styles/toolkit.css">
+	<!-- /toolkit styles -->
+
+</head>
+<body>
+
+		<!-- fabricator icons -->
+		<svg style="display: none;">
+			<symbol id="f-icon-code" viewBox="0 0 512 512">
+				<path d="M377.3 121.3l-40.5 40.4 94.4 94.3-94.4 94.3 40.5 40.4L512 256zM134.7 121.3L0 256l134.7 134.7 40.5-40.4L80.8 256l94.4-94.3zM281.8 103.8zM230.183 408.16l-29.233-7.97 80.85-296.484 29.234 7.972z"/>
+			</symbol>
+			<symbol id="f-icon-notes" viewBox="0 0 512 512">
+				<path d="M443.8 0H68.2C30.6 0 0 30.5 0 68v264.2c0 16.6 8.9 29.5 25.9 37.5 15.3 7.2 33.1 8.4 40.1 8.5V512l201.6-134h176.1c37.6 0 68.2-30.3 68.2-67.8V68c.1-37.5-30.5-68-68.1-68zM114 438V330H68.2c-11.1 0-19.2-8.8-19.2-19.8V68c0-11 8.2-20 19.2-20h375.5c11.1 0 19.2 9 19.2 20v242.2c0 11-8.2 19.8-19.2 19.8H244.2L114 438z"/>
+			</symbol>
+			<symbol id="f-icon-labels" viewBox="0 0 512 512">
+				<path d="M304 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM464 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM144 280c0 13.2-10.8 24-24 24H72c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48z"/>
+			</symbol>
+			<symbol id="f-icon-menu" viewBox="0 0 512 512">
+				<path d="M512 100c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 212c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 324c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 436c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24z"/>
+			</symbol>
+			<symbol id="f-icon-settings" viewBox="0 0 512 512">
+				<path d="M256 377.3c-67.5 0-121.6-53.9-121.6-121.3s54-121.3 121.6-121.3S377.6 188.6 377.6 256 323.5 377.3 256 377.3zm0-215.6c-52.7 0-94.6 41.8-94.6 94.3s41.9 94.3 94.6 94.3 94.6-41.8 94.6-94.3-41.9-94.3-94.6-94.3zM293.2 512h-72.9L200 450c-13.5-4-27-9.4-39.2-16.2l-59.4 29.6L50 412.3 79.7 353c-6.8-12.1-12.2-25.6-16.2-39.1L0 292.4v-72.8l62.1-20.2c4.1-13.5 9.5-26.9 16.2-39.1L48.6 101 100 49.9l59.4 29.6c12.2-6.7 25.7-12.1 39.2-16.2L220.2 0h72.9l20.3 62c13.5 4 27 9.4 39.2 16.2L412 48.5l51.3 51.2-29.7 59.3c6.8 12.1 12.2 25.6 16.2 39.1l62.1 20.2V291l-62.1 20.2c-4.1 13.5-9.5 26.9-16.2 39.1l29.7 59.3-51.3 51.2-59.4-29.6c-12.2 6.7-25.7 12.1-39.2 16.2L293.2 512zm-54.1-26.9h35.1l18.9-57.9 6.8-1.3c16.2-4 31.1-10.8 45.9-18.9l6.8-4 54 26.9 24.3-24.3-27-53.9 4.1-6.7c8.1-13.5 14.9-29.6 18.9-45.8l1.4-6.7 58.1-18.9v-35l-58.1-18.9-1.4-6.7c-4.1-16.2-10.8-31-18.9-45.8l-4.1-6.7 27-53.9-24.3-24.3-54 26.9-6.8-4c-14.8-8.2-29.7-14.9-45.9-19l-6.8-1.3L274.2 27h-35.1l-18.9 57.9-6.8 1.3c-16.2 4-31.1 10.8-45.9 18.9l-6.8 4-54-26.9-24.3 24.3 27 53.9-4.1 6.7c-8.1 13.5-14.9 29.6-18.9 45.8l-1.4 6.7-58 18.9v35l58.1 18.9 1.4 6.7c4.1 16.2 10.8 31 18.9 45.8l4.1 6.7-27 53.9 24.3 24.3 54-26.9 6.8 4c14.9 8.1 29.7 14.8 45.9 18.9l6.8 1.3 18.8 58z"/>
+			</symbol>
+		</svg>
+		<!-- /fabricator icons -->
+		<!-- fabricator menu -->
+		<div class="f-menu">
+		
+			<div class="f-controls">
+				<div class="f-control f-global-control" data-f-toggle-control="labels" title="Toggle Labels">
+					<svg>
+						<use xlink:href="#f-icon-labels" />
+					</svg>
+				</div>
+				<div class="f-control f-global-control" data-f-toggle-control="notes" title="Toggle Notes">
+					<svg>
+						<use xlink:href="#f-icon-notes" />
+					</svg>
+				</div>
+				<div class="f-control f-global-control" data-f-toggle-control="code" title="Toggle Code">
+					<svg>
+						<use xlink:href="#f-icon-code" />
+					</svg>
+				</div>
+			</div>
+		
+			<ul>
+		
+				<li>
+					<a href="index.html" class="f-menu__heading">Overview</a>
+				</li>
+		
+				<li>
+					<a href="components.html" class="f-menu__heading">Components</a>
+					<ul>
+						<li>
+							<a href="components.html#01-navigation">Navigation</a>
+						</li>
+						<li>
+							<a href="components.html#box">Box</a>
+						</li>
+						<li>
+							<a href="components.html#buttons">Buttons</a>
+						</li>
+						<li>
+							<a href="components.html#checkbox">Checkbox</a>
+						</li>
+						<li>
+							<a href="components.html#footer_struct">Footer Struct</a>
+						</li>
+						<li>
+							<a href="components.html#headline">Headline</a>
+						</li>
+						<li>
+							<a href="components.html#images">Images</a>
+						</li>
+						<li>
+							<a href="components.html#inputs">Inputs</a>
+						</li>
+						<li>
+							<a href="components.html#lists">Lists</a>
+						</li>
+						<li>
+							<a href="components.html#modal">Modal</a>
+						</li>
+						<li>
+							<a href="components.html#pagination">Pagination</a>
+						</li>
+						<li>
+							<a href="components.html#paragraph">Paragraph</a>
+						</li>
+						<li>
+							<a href="components.html#radio">Radio</a>
+						</li>
+						<li>
+							<a href="components.html#searchField">Searchfield</a>
+						</li>
+						<li>
+							<a href="components.html#select">Select</a>
+						</li>
+						<li>
+							<a href="components.html#subhero">Subhero</a>
+						</li>
+						<li>
+							<a href="components.html#table">Table</a>
+						</li>
+						<li>
+							<a href="components.html#text-input">Text Input</a>
+						</li>
+						<li>
+							<a href="components.html#textarea">Textarea</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="structures.html" class="f-menu__heading">Structures</a>
+					<ul>
+						<li>
+							<a href="structures.html#footer">Footer</a>
+						</li>
+						<li>
+							<a href="structures.html#form">Form</a>
+						</li>
+						<li>
+							<a href="structures.html#hero">Hero</a>
+						</li>
+						<li>
+							<a href="structures.html#hero-top">Hero Top</a>
+						</li>
+						<li>
+							<a href="structures.html#newsletterblock">Newsletterblock</a>
+						</li>
+						<li>
+							<a href="structures.html#why">Why</a>
+						</li>
+					</ul>
+				</li>
+		
+				<li>
+					<a href="pages.html" class="f-menu__heading">Pages</a>
+					<ul>
+						<li>
+							<a href="pages/home.html" target="_blank">Home</a>
+						</li>
+						<li>
+							<a href="pages/listeJardiniers.html" target="_blank">Listejardiniers</a>
+						</li>
+					</ul>
+				</li>
+		
+				<li>
+					<a href="docs.html" class="f-menu__heading">Docs</a>
+					<ul>
+						<li>
+							<a href="docs.html#javascript">Javascript</a>
+						</li>
+					</ul>
+				</li>
+		
+			</ul>
+		
+		
+		</div>
+		<!-- /fabricator menu -->
+		<div class="f-container">
+			<div class="f-control-bar">
+				<div class="f-control f-menu-toggle">
+					<svg>
+						<use xlink:href="#f-icon-menu" />
+					</svg>
+				</div>
+			</div>
+
+
+	
+<h1 data-f-toggle="labels">Structures</h1>
+
+
+<div class="f-item-group" id="footer">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Footer</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-preview">
+	<footer class="footer">
+	<div class="layout__container">
+		<div class="footer__newsletter">
+			<div class="footer__newsletter__abo">
+				<h2>Abonnez-vous à la newsletter</h2>
+				<label class="form__label" for="">Votre email<sup>*</sup></label>
+				<input class="form__input--dark" type="text">
+				<button class="btn--default btn--small">Envoyer</button>
+			</div>
+
+			<div class="footer__newsletter__list">
+				<h2>C'est mon jardinier</h2>
+				<ul>
+					<li><a href="#">A propos</a></li>
+					<li><a href="#">L'équipe</a></li>
+					<li><a href="#">Recrutement jardiniers</a></li>
+					<li><a href="#">Communiqué de presse</a></li>
+					<li><a href="#">FAQ</a></li>
+					<li><a href="#">CGV</a></li>
+					<li><a href="#">Mentions légales</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer__contact">
+			<div class="footer__contact__infos">
+				<h2>Contactez-nous</h2>
+				<p>Appelez-nous : +33 1 71 63 70 70</p>
+				<p>
+					Horaires du service client et prestataire :<br> 9:00 - 19:00.
+				</p>
+				<h2>Suivez-nous</h2>
+
+			</div>
+			<div class="footer__contact__form">
+				Envoyez-nous un message :
+
+				<div class="form__row-twocol">
+					<div class="lastname">
+						<label class="form__label" for="textInput">Votre nom<sup>*</sup></label>
+						<input class="form__input--sushi" type="text" id="textInput" />
+					</div>
+					<div class="firstname">
+						<label class="form__label" for="textInput">Votre prénom<sup>*</sup></label>
+						<input class="form__input--sushi" type="text" id="textInput" />
+					</div>
+				</div>
+				<label class="form__label" for="textArea">Votre message</label>
+				<textarea class="form__input--sushi form__input--small" name="" id="textArea" cols="30" rows="5"></textarea>
+				<button class="btn--black btn--small layout--centered">Envoyer</button>
+			</div>
+		</div>
+	</div>
+</footer>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;footer class&#x3D;&quot;footer&quot;&gt;
+	&lt;div class&#x3D;&quot;layout__container&quot;&gt;
+		&lt;div class&#x3D;&quot;footer__newsletter&quot;&gt;
+			&lt;div class&#x3D;&quot;footer__newsletter__abo&quot;&gt;
+				&lt;h2&gt;Abonnez-vous à la newsletter&lt;/h2&gt;
+				&lt;label class&#x3D;&quot;form__label&quot; for&#x3D;&quot;&quot;&gt;Votre email&lt;sup&gt;*&lt;/sup&gt;&lt;/label&gt;
+				&lt;input class&#x3D;&quot;form__input--dark&quot; type&#x3D;&quot;text&quot;&gt;
+				&lt;button class&#x3D;&quot;btn--default btn--small&quot;&gt;Envoyer&lt;/button&gt;
+			&lt;/div&gt;
+
+			&lt;div class&#x3D;&quot;footer__newsletter__list&quot;&gt;
+				&lt;h2&gt;C&#x27;est mon jardinier&lt;/h2&gt;
+				&lt;ul&gt;
+					&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;A propos&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;L&#x27;équipe&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Recrutement jardiniers&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Communiqué de presse&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;CGV&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Mentions légales&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;footer__contact&quot;&gt;
+			&lt;div class&#x3D;&quot;footer__contact__infos&quot;&gt;
+				&lt;h2&gt;Contactez-nous&lt;/h2&gt;
+				&lt;p&gt;Appelez-nous : +33 1 71 63 70 70&lt;/p&gt;
+				&lt;p&gt;
+					Horaires du service client et prestataire :&lt;br&gt; 9:00 - 19:00.
+				&lt;/p&gt;
+				&lt;h2&gt;Suivez-nous&lt;/h2&gt;
+
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;footer__contact__form&quot;&gt;
+				Envoyez-nous un message :
+
+				&lt;div class&#x3D;&quot;form__row-twocol&quot;&gt;
+					&lt;div class&#x3D;&quot;lastname&quot;&gt;
+						&lt;label class&#x3D;&quot;form__label&quot; for&#x3D;&quot;textInput&quot;&gt;Votre nom&lt;sup&gt;*&lt;/sup&gt;&lt;/label&gt;
+						&lt;input class&#x3D;&quot;form__input--sushi&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;textInput&quot; /&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;firstname&quot;&gt;
+						&lt;label class&#x3D;&quot;form__label&quot; for&#x3D;&quot;textInput&quot;&gt;Votre prénom&lt;sup&gt;*&lt;/sup&gt;&lt;/label&gt;
+						&lt;input class&#x3D;&quot;form__input--sushi&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;textInput&quot; /&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;label class&#x3D;&quot;form__label&quot; for&#x3D;&quot;textArea&quot;&gt;Votre message&lt;/label&gt;
+				&lt;textarea class&#x3D;&quot;form__input--sushi form__input--small&quot; name&#x3D;&quot;&quot; id&#x3D;&quot;textArea&quot; cols&#x3D;&quot;30&quot; rows&#x3D;&quot;5&quot;&gt;&lt;/textarea&gt;
+				&lt;button class&#x3D;&quot;btn--black btn--small layout--centered&quot;&gt;Envoyer&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/footer&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="form">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Form</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-preview">
+	<form action="">
+	<div>
+		<label class="form__label" for="textInput">Text input</label>
+		<input class="form__input" type="text" id="textInput" /> </div>
+	<button class="btn--default">Submit</button></form>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;form action&#x3D;&quot;&quot;&gt;
+	&lt;div&gt;
+		&lt;label class&#x3D;&quot;form__label&quot; for&#x3D;&quot;textInput&quot;&gt;Text input&lt;/label&gt;
+		&lt;input class&#x3D;&quot;form__input&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;textInput&quot; /&gt; &lt;/div&gt;
+	&lt;button class&#x3D;&quot;btn--default&quot;&gt;Submit&lt;/button&gt;&lt;/form&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="hero">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Hero</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-preview">
+	<div class="hero hero--small">
+	<div class="layout__container hero__content">
+		<h1>
+			Les jardiniers les plus proches <br> 31000, Toulouse
+		</h1>
+		<button class="btn--default">Submit</button> </div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;hero hero--small&quot;&gt;
+	&lt;div class&#x3D;&quot;layout__container hero__content&quot;&gt;
+		&lt;h1&gt;
+			Les jardiniers les plus proches &lt;br&gt; 31000, Toulouse
+		&lt;/h1&gt;
+		&lt;button class&#x3D;&quot;btn--default&quot;&gt;Submit&lt;/button&gt; &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="hero-top">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Hero Top</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-preview">
+	<div class="hero">
+	<div class="layout__container hero__content hero__content--centered">
+		<h1>Trouver un jardinier en un clin d'oeil</h1>
+		<form class="form" action="">
+			<label class="form__label" for="">Entrez votre code postal</label>
+			<input class="form__input--search" type="text" name="search"> <button class="btn--default">Submit</button> </form>
+	</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;hero&quot;&gt;
+	&lt;div class&#x3D;&quot;layout__container hero__content hero__content--centered&quot;&gt;
+		&lt;h1&gt;Trouver un jardinier en un clin d&#x27;oeil&lt;/h1&gt;
+		&lt;form class&#x3D;&quot;form&quot; action&#x3D;&quot;&quot;&gt;
+			&lt;label class&#x3D;&quot;form__label&quot; for&#x3D;&quot;&quot;&gt;Entrez votre code postal&lt;/label&gt;
+			&lt;input class&#x3D;&quot;form__input--search&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;search&quot;&gt; &lt;button class&#x3D;&quot;btn--default&quot;&gt;Submit&lt;/button&gt; &lt;/form&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="newsletterblock">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Newsletterblock</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-preview">
+	<div class="newsletterblock">
+	<div class="layout__container">
+		<div class="layout__splittedtwo">
+			<section class="layout__splittedtwo__column">
+				<h2>Abonnez vous à la newsletter</h2>
+
+			</section>
+			<section class="layout__splittedtwo__column">
+				<h2>Cmonjardinier</h2>
+				<ul>
+					<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+					<li>Aliquam tincidunt mauris eu risus.</li>
+					<li>Vestibulum auctor dapibus neque.</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;newsletterblock&quot;&gt;
+	&lt;div class&#x3D;&quot;layout__container&quot;&gt;
+		&lt;div class&#x3D;&quot;layout__splittedtwo&quot;&gt;
+			&lt;section class&#x3D;&quot;layout__splittedtwo__column&quot;&gt;
+				&lt;h2&gt;Abonnez vous à la newsletter&lt;/h2&gt;
+
+			&lt;/section&gt;
+			&lt;section class&#x3D;&quot;layout__splittedtwo__column&quot;&gt;
+				&lt;h2&gt;Cmonjardinier&lt;/h2&gt;
+				&lt;ul&gt;
+					&lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/li&gt;
+					&lt;li&gt;Aliquam tincidunt mauris eu risus.&lt;/li&gt;
+					&lt;li&gt;Vestibulum auctor dapibus neque.&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/section&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="why">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Why</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-preview">
+	<div class="home layout__container layout__splittedthree">
+	<div class="home__argument layout__splittedthree__column">
+		<img class=" img--centered img--rounded" src="http://placehold.it/100">
+		<h2 class="text-center">Professionalisme</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia hic rem at nesciunt sapiente nobis doloribus voluptatem aut ipsum officia.</p>
+	</div>
+	<div class="home__argument layout__splittedthree__column">
+		<img class=" img--centered img--rounded" src="http://placehold.it/100">
+		<h2 class="text-center">Fiabilité</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia hic rem at nesciunt sapiente nobis doloribus voluptatem aut ipsum officia.</p>
+	</div>
+	<div class="home__argument layout__splittedthree__column">
+		<img class=" img--centered img--rounded" src="http://placehold.it/100">
+		<h2 class="text-center">50% déduction fiscale</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia hic rem at nesciunt sapiente nobis doloribus voluptatem aut ipsum officia.</p>
+	</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;home layout__container layout__splittedthree&quot;&gt;
+	&lt;div class&#x3D;&quot;home__argument layout__splittedthree__column&quot;&gt;
+		&lt;img class&#x3D;&quot; img--centered img--rounded&quot; src&#x3D;&quot;http://placehold.it/100&quot;&gt;
+		&lt;h2 class&#x3D;&quot;text-center&quot;&gt;Professionalisme&lt;/h2&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia hic rem at nesciunt sapiente nobis doloribus voluptatem aut ipsum officia.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;home__argument layout__splittedthree__column&quot;&gt;
+		&lt;img class&#x3D;&quot; img--centered img--rounded&quot; src&#x3D;&quot;http://placehold.it/100&quot;&gt;
+		&lt;h2 class&#x3D;&quot;text-center&quot;&gt;Fiabilité&lt;/h2&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia hic rem at nesciunt sapiente nobis doloribus voluptatem aut ipsum officia.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;home__argument layout__splittedthree__column&quot;&gt;
+		&lt;img class&#x3D;&quot; img--centered img--rounded&quot; src&#x3D;&quot;http://placehold.it/100&quot;&gt;
+		&lt;h2 class&#x3D;&quot;text-center&quot;&gt;50% déduction fiscale&lt;/h2&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia hic rem at nesciunt sapiente nobis doloribus voluptatem aut ipsum officia.&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+
+
+		</div>
+	<script src="assets/fabricator/scripts/f.js"></script>
+
+	<!-- toolkit scripts -->
+	<script src="assets/toolkit/scripts/toolkit.js"></script>
+	<!-- /toolkit scripts -->
+
+</body>
+</html>
