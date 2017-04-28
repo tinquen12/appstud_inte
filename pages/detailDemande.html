@@ -54,33 +54,79 @@
     Accueil > Les jardiniers les plus proches, 31000 Toulouse
   </div>
 </div>
-<div class="layout__container jardinier-detail">
-  <div class="wrapper">
-    <div class="infos">
-      <img class="img--avatar" src="http://placehold.it/100">      <div class="identity">
-        <div class="name">Vincent</div>
-        <p>
-        En activité depuis 10 ans<br>
-        Albi
-        </p>
-      </div>
-    </div>
-    <div class="actions">
-      <button class="btn--default">Choisir ce jardinier</button>
-      <button class="btn--lined">Retour à la liste</button>
-    </div>
-  </div>
-  
-  <p> 
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, repudiandae nesciunt dolore possimus quod excepturi distinctio. Delectus possimus sit distinctio quia laudantium, deserunt aspernatur autem sequi architecto. Qui porro, aliquid voluptas, quaerat blanditiis, voluptatibus quasi officia ipsa inventore harum perferendis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta debitis officiis, nam autem provident odio assumenda ex sapiente itaque tempora!
-  </p>
-  <h2>Ses réalisations</h2>
+<div class="layout__container demandes">
+  <div class="tabs">
+    <div class="tabs__menu">
+      <input id="tab1" type="radio" name="tabs" checked>
+      <label for="tab1">Visite pour devis</label>
 
-  <h2>Tarification</h2>
-  <div class="tarifs">
-    De 23€ à 35€/heure<br>
-    <a href="#">lorem.pdf</a>
+      <input id="tab2" type="radio" name="tabs">
+      <label for="tab2">Devis et réservations</label>
+      </div>
+    <div class="tabs__content">
+      <div class="tabs__content--selected" id="box-one">
+        <!-- box two content -->
+        <div class="box">
+          <span class="demandes__date">Demande du 02/05/17</span>
+
+          <div class="demandes__infos">
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, odit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non officia, harum sunt consequatur iusto ipsa!</p>
+          </div>
+          <div class="demandes__actions">
+            
+          </div>
+        </div>
+
+        <p class="demandes__warning">Vous avez reçu 2 réponses positives à votre demande, vous pouvez les consulter ci-dessous</p>
+
+        <div class="demandes__reponses">
+
+          <div class="box box--grey">
+            <div class="demandes__reponses__image">
+              <img class=" img--centered img--rounded" src="http://placehold.it/100">              <span>Lizzie</span>
+            </div>
+
+            <div class="demandes__reponses__infos">
+              Date : <span class="bold">26 mars 2017</span><br>
+              Heure d'arrivée : <span class="bold">14h</span>
+            </div>
+            
+            <div class="demandes__reponses__actions">
+              <p>Vous pouvez accepter au <br><span class="bold">maximum deux visites</span>.</p>
+              <button class="btn--default btn--small">Accepter</button>
+              <button class="btn--lined btn--small">Décliner</button>
+            </div>          
+          </div>
+
+          <div class="box box--grey">
+            <div class="demandes__reponses__image">
+              <img class=" img--centered img--rounded" src="http://placehold.it/100">              <span>Vincent</span>
+            </div>
+
+            <div class="demandes__reponses__infos">
+              Date : <span class="bold">26 mars 2017</span><br>
+              Heure d'arrivée : <span class="bold">14h</span>
+            </div>
+            
+            <div class="demandes__reponses__actions">
+              <div class="demandes__reponses__actions--validated">
+                Accepté
+              </div>
+              <button class="btn--default btn--small">Annuler*</button>
+              <p>* En cas d'annulation, vous ne serez pas remboursé de la visite</p>
+            </div>          
+          </div>
+
+        </div>
+      </div>
+      
+<!--       <div id="box-two">
+        box two content
+        Box 2
+      </div> -->
+    </div>
   </div>
+
 </div>
 
 <footer class="footer">
